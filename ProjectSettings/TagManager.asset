@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: ground
+    uniqueID: 2651737369
+    locked: 0
+  - name: grass
+    uniqueID: 1985536713
+    locked: 0
+  - name: ground top collision
+    uniqueID: 3575252393
+    locked: 0
+  - name: ground top
+    uniqueID: 3281557199
+    locked: 0
+  - name: grass top
+    uniqueID: 2023153445
+    locked: 0
+  - name: walkinfront
+    uniqueID: 2986101981
+    locked: 0
+  - name: collision
+    uniqueID: 719459319
+    locked: 0
+  - name: player
+    uniqueID: 1674123067
+    locked: 0
+  - name: walkebehind
+    uniqueID: 1735197345
+    locked: 0
+  - name: Dec
+    uniqueID: 3025416829
+    locked: 0
+  m_RenderingLayers:
+  - Default

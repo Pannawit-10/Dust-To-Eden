@@ -56,6 +56,9 @@ TagManager:
   - name: grass top
     uniqueID: 2023153445
     locked: 0
+  - name: collision 2
+    uniqueID: 2865302371
+    locked: 0
   - name: walkinfront
     uniqueID: 2986101981
     locked: 0

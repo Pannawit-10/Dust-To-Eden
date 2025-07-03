@@ -6,24 +6,41 @@ public class Chest : MonoBehaviour, IInteractable
 {
     public bool IsOpened { get; private set; }
     public string ChestID { get; private set; }
-    public GameObject itemPrefeb; //Item that chest drops
+    public GameObject itemPrefab; //Item that chest drops
     public Sprite openedSprite;
 
     // Start is called before the first frame update
     void Start()
     { 
-        ChestID = //UniqueID
+        ChestID ??= GlobalHelper.GenerateUniqueID(gameObject);
     }
 
     public bool CanInteract()
     { 
-        throw new System.NotImplementedException();
+        return !IsOpened;
     }
     public void Interact()
-    { 
-        throw new System.NotImplementedException();
+    {
+        if (!CanInteract()) return;
+        OpenChest();
     }
 
+    private void OpenChest()
+    {
+        SetOpened(true);
+        
+        if (itemPrefab)
+        {
+            GameObject droppedItem = Instantiate(itemPrefab, transform.position + Vector3.down, Quaternion.identity);
+            droppedItem.GetComponent<BounceEffect>().StartBounce();
+        }
+    }
 
-
+    public void SetOpened(bool opened)
+    {
+        if (IsOpened = opened)
+        { 
+           GetComponent<SpriteRenderer>().sprite = openedSprite;
+        }
+    }
 }

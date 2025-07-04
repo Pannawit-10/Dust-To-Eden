@@ -22,26 +22,26 @@ public class Chest : MonoBehaviour, IInteractable
     public void Interact()
     {
         if (!CanInteract()) return;
-        OopenChest();
+        OpenChest();
     }
 
     private void OpenChest()
     {
         SetOpened(true);
-        .
+
         //DropItem
         if (itemPrefab)
         {
             GameObject droppedItem = Instantiate(itemPrefab, transform.position + Vector3.down, Quaternion.identity);
-            droppedItem.GetComponent<BounceEffacct>().StartBounce();
+
         }
     }
 
     public void SetOpened(bool opened)
     {
         if (IsOpened = opened)
-        { 
-           GetComponent<SpriteRenderer>().sprite = openedSprite;
+        {
+            GetComponent<SpriteRenderer>().sprite = openedSprite;
         }
     }
 }

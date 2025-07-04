@@ -21658,6 +21658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a37cc6ef4b95c1344afa6be679946916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionIcon: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -37488,8 +37489,8 @@ Transform:
   m_GameObject: {fileID: 1177426781}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.004, y: 0.548, z: 0}
-  m_LocalScale: {x: 0.10009612, y: 0.10009612, z: 0.10009612}
+  m_LocalPosition: {x: 0.004, y: 0.561, z: 0}
+  m_LocalScale: {x: 0.11733314, y: 0.11733314, z: 0.11733314}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 593194087}
@@ -37535,10 +37536,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1269550467
-  m_SortingLayer: 11
+  m_SortingLayerID: 1735197345
+  m_SortingLayer: 10
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1512806090803436940, guid: c863d919088a247468d09b9f0bdab8af, type: 3}
+  m_Sprite: {fileID: -7310529108253123567, guid: 5f116bd0b498f1a4bbecabf7fcc420d7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

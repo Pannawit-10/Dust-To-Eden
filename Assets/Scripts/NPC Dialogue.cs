@@ -10,5 +10,5 @@ public class NPCDialogus : ScriptableObject
     public float dialogueDuration = 0.05f;
     public AudioClip voicsound;
     public float voiceVolume = 1.0f;
-  
+
 }

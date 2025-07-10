@@ -13,7 +13,7 @@ public class InventoryController : MonoBehaviour
         for (int i = 0; i < slotCount; i++)
         {
             Slot slot = Instantiate(slotPrefab, inventoryPanel.transform).GetComponent<Slot>();
-            if (i < itemPrefabs.Length)
+            if(i < itemPrefabs.Length)
             {
                 GameObject item = Instantiate(itemPrefabs[i], slot.transform);
                 item.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;

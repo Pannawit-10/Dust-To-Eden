@@ -62,6 +62,9 @@ TagManager:
   - name: walkinfront
     uniqueID: 2986101981
     locked: 0
+  - name: walkinfront 2
+    uniqueID: 875666663
+    locked: 0
   - name: collision
     uniqueID: 719459319
     locked: 0

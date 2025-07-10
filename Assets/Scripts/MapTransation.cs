@@ -21,7 +21,7 @@ public class MapTransation : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            confiner.m_BoundingShape2D = mapBoundary;
+            Confiner.BoundingShape2D = mapBoundary;
             UpdatePlayerPosition(collision.gameObject);
         }
     }

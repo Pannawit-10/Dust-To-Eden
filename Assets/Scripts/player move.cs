@@ -4,9 +4,9 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public Animator animator;
-    private Rigidbody2D rb;     
+    private Rigidbody2D rb;
     private Vector2 movement;
-
+    public AudioSource footstepAudio;
 
     void Start()
     {
@@ -15,8 +15,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-
         movement = Vector2.zero;
+
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             movement.y = 1;
@@ -25,12 +25,10 @@ public class PlayerController : MonoBehaviour
         {
             movement.y = -1;
         }
-
         else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             movement.x = -1;
         }
-
         else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             movement.x = 1;
@@ -38,7 +36,19 @@ public class PlayerController : MonoBehaviour
 
         animator.SetFloat("horizontal", movement.x);
         animator.SetFloat("vertical", movement.y);
-        animator.SetFloat("speed",movement.sqrMagnitude);
+        animator.SetFloat("speed", movement.sqrMagnitude);
+
+        if (movement != Vector2.zero)
+        {
+            if (!footstepAudio.isPlaying)
+            {
+                footstepAudio.Play();
+            }
+        }
+        else
+        {
+            footstepAudio.Stop();
+        }
     }
 
     void FixedUpdate()

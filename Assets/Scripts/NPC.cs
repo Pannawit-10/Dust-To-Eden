@@ -1,100 +1,101 @@
-//using System.Collections;
-//using TMPro;
-//using UnityEngine;
-//using UnityEngine.UI;
+using System.Collections;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
-//public class NPC : MonoBehaviour, IInteractable
-//{
-//    public NPCDialogus dialogueData;
-//    public GameObject dialoguePanel;
-//    public TMP_Text dialogueText, nameText;
-//    public Image PortraitImage;
+public class NPC : MonoBehaviour, IInteractable
+{
+    public NPCDialogue diagueData;
+    public GameObject dialoguePanel;
+    public TMP_Text dialogueText, nameText;
+    public Image PortraitImage;
 
-//    private int dialogueIndex;
-//    private bool isTyping, isDialogueActive;
+    private int dialogueIndex;
+    private bool isTyping, isDialogueActive;
 
-//    public bool CanInteract()
-//    {
-//        return !isDialogueActive;
-//    }
+    public bool CanInteract()
+    {
+        return !isDialogueActive;
+    }
 
-//    public void Interact()
-//    {
-//        // If no dialogue data or the gamr is paused and no dialogue is active
-//        if (dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive))
-//            return;
+    public void Interact()
+    {
+        // If no dialogue data or the game is paused and no dialogue is active
+        if (dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive))
+            return;
 
-//        if (!isDialogueActive)
-//        {
-//            NextLine();
-//        }
-//        else
-//        {
-//            StartDialogue();
-//        }
-//    }
+        if (!isDialogueActive)
+        {
+            NextLine();
+        }
+        else
+        {
+            StartDialogue();
+        }
+    }
 
-//    void StartDialogue()
-//    {
-//        isDialogueActive = true;
-//        dialogueIndex = 0;
+    void StartDialogue()
+    {
+        isDialogueActive = true;
+        dialogueIndex = 0;
 
-//        nameText.SetText(dialogueData.name);
-//        PortraitImage.sprite = dialogueData.npcPortrait;
+        nameText.SetText(dialogueData.npcname);
+        PortraitImage.sprite = dialogueData.npcPortrait;
 
-//        dialoguePanel.SetActive(true);
-//        PauseController.SetPause(true);
+        dialoguePanel.SetActive(true);
+        PauseController.SetPause(true);
 
-//        StartCoroutine(TypeLine());
-//    }
+        StartCoroutine(TypeLine());
+    }
 
-//    void NextLine()
-//    {
-//        if (isTyping)
-//        {
-//            // Skip typing animation and show full line
-//            StopAllCoroutines();
-//            dialogueText.SetText(dialogueData.dialogueLines[dialogueIndex]);
-//            isTyping = false;
-//        }
-//        else if (++dialogueIndex < dialogueData.dialogueLines.Length)
-//        {
-//            //if another line, type next line
-//            StartCoroutine(TypeLine());
-//        }
-//        else
-//        {
-//            EndDialogue();
-//        }
-//    }
+    void NextLine()
+    {
+        if (isTyping)
+        {
+            // Skip typing animation and show the full line
+            StopAllCoroutines();
+            dialogueText.SetText(dialogueData.dialogueLines[dialogueIndex]);
+            isTyping = false;
+        }
+        else if (++dialogueIndex < dialogueData.dialogueLines.Length)
+        {
+            //If another line, type next line
+            StartCoroutine(TypeLine());
+        }
+        else
+        {
+            EndDialogue();
+        }
+    }
 
-//    IEnumerator TypeLine()
-//    {
-//        isTyping = true;
-//        dialogueText.SetText("");
+    IEnumerator TypeLine()
+    {
+        isTyping = true;
+        dialogueText.SetText("");
 
-//        foreach (char letter in dialogueData.dialogueLines[dialogueIndex])
-//        {
-//            dialogueText.text += letter;
-//            yield return new WaitForSeconds(dialogueData.typingSpeed);
-//        }
+        foreach (char letter in dialogueData.dialogueLines[dialogueIndex])
+        {
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(dialogueData.typingSpeed);
+        }
 
-//        isTyping = false;
+        isTyping = false;
 
-//        if(dialogueData.autoProgressLines.Length > dialogueIndex && dialogueData.autoProgressLines[dialogueIndex])
-//        {
-//            yield return new WaitForSeconds(dialogueData.autoProgressDelay);
-//            NextLine();
-//        }
-//    }
+        if (DialogueData.autoProgressLines.Length > dialogueIndex && dialogueData.autoProgressLines[dialogueIndex])
+        {
+            yield return new WaitForSeconds(dialogueData.autoProgressDelay);
+            NextLine();
+        }
+    }
 
-//    public void EndDialogue()
-//    {
-//        StopAllCoroutines();
-//        isDialogueActive = false;
-//        dialogueText.SetText("");
-//        dialoguePanel.SetActive(false);
-//        PauseController.SetPause(false);
-//    }
+    public void EndDialogue()
+    {
+        StopAllCoroutines();
+        isDialogueActive = false;
+        dialogueText.SetText("");
+        dialoguePanel.SetActive(false);
+        PauseController.SetPause(false);
+    }
+}
 
-//}
+

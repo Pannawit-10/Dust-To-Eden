@@ -45,7 +45,7 @@ public class SoundEffectManager : MonoBehaviour
             }
 
             // ป้องกันไม่ให้ GameObject นี้ถูกทำลายเมื่อโหลด Scene ใหม่
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {

@@ -6,7 +6,7 @@ public class MainMenu : MonoBehaviour
     // Method to start the game
     public void StartGame()
     {
-        SceneManager.LoadScene("Mapone");
+        SceneManager.LoadScene("cutscene01");
     }
     // Method to quit the game
     public void QuitGame()

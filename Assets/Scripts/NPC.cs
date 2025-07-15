@@ -103,6 +103,7 @@ public class NPC : MonoBehaviour, IInteractable
         foreach (char letter in dialogueData.dialogueLines[dialogueIndex])
         {
             dialogueText.text += letter;
+            SoundEffectManager.PlayVoice("dialogueData.voiceSound, dialogueData.voicePicth"); // เล่นเสียงพิมพ์
             yield return new WaitForSeconds(dialogueData.dialogueDuration); // แก้ไขจาก typingSpeed เป็น dialogueDuration
         }
 

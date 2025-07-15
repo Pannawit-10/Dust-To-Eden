@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: NPC1Dialogue
   m_EditorClassIdentifier: 
   npcName: 
-  npcPortrait: {fileID: 0}
-  dialogueLines: []
-  autoProgressLines: 
-  autoProgessFDelay: 1.5
-  dialogueDuration: 0.05
-  voicsound: {fileID: 0}
-  voiceVolume: 1
+  npcPortrait: {fileID: -7969577512732342410, guid: c7102c0e5915c2e4b9cf97a552aa861d, type: 3}
+  dialogueLines:
+  - "\u0E2A\u0E27\u0E31\u0E2A\u0E14\u0E35\u0E01\u0E25\u0E49\u0E32\u0E44\u0E21\u0E48\u0E40\u0E08\u0E2D\u0E01\u0E31\u0E19\u0E15\u0E31\u0E49\u0E07\u0E19\u0E32\u0E19"
+  autoProgressLines: 01
+  autoProgessFDelay: 1
+  dialogueDuration: 0.1
+  voicsound: {fileID: 8300000, guid: a8bbb5844138c6745bfdfd79e32b9525, type: 3}
+  voiceVolume: 0.1

@@ -33,7 +33,7 @@ public class InventoryController : MonoBehaviour
         //look for empty slot
         foreach (Transform slotTranform in inventoryPanel.transform)
         {
-            Slot slot = GetComponent<Slot>();
+            Slot slot = slotTranform.GetComponent<Slot>();
             if (slot != null && slot.currentItem == null)
             {
                 GameObject newItem = Instantiate(itemPrefab, slot.transform);

@@ -17,7 +17,7 @@ public class timecout : MonoBehaviour
         Timelife = Time.deltaTime + Timelife;
         Debug.Log(Timelife);
 
-        if (Timelife >= 43.0f)
+        if (Timelife >= 40.0f)
         {
             SceneManager.LoadScene(1);
         }

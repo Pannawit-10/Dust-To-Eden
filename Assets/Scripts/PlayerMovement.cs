@@ -1,44 +1,48 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-    private float moveSpeed = 5f;
-    private Rigidbody2D rb;
-    private Vector2 moveInput;
-    private Animator animator;
+    public float moveSpeed = 5f;
+    public Animator animator;
+    private Rigidbody2D rb;     
+    private Vector2 movement;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (PauseController.IsGamePaused)
+
+        movement = Vector2.zero;
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
-            rb.linearVelocity = Vector2.zero; //Stop movement
-            animator.SetBool("isWalking", false);
-            return;
+            movement.y = 1;
         }
-        rb.linearVelocity = moveInput * moveSpeed;
-        animator.SetBool("isWalking", rb.linearVelocity.magnitude > 0);
+        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+        {
+            movement.y = -1;
+        }
+
+        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            movement.x = -1;
+        }
+
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        {
+            movement.x = 1;
+        }
+
+        animator.SetFloat("horizontal", movement.x);
+        animator.SetFloat("vertical", movement.y);
+        animator.SetFloat("speed",movement.sqrMagnitude);
     }
 
-    public void Move(InputAction.CallbackContext context)
+    void FixedUpdate()
     {
-        if (context.canceled)
-        {
-            animator.SetBool("isWalking", false);
-            animator.SetFloat("LastInputX", moveInput.x);
-            animator.SetFloat("LastInputY", moveInput.y);
-        }
-
-        moveInput = context.ReadValue<Vector2>();
-        animator.SetFloat("InputX", moveInput.x);
-        animator.SetFloat("InputY", moveInput.y);
+        rb.linearVelocity = movement.normalized * moveSpeed;
     }
 }

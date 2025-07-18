@@ -15,8 +15,9 @@ MonoBehaviour:
   npcName: "\u0E40\u0E21\u0E06"
   npcPortrait: {fileID: 6682353247141527064, guid: 333b43cd5cb8b01429f97ca3fb3b2b91, type: 3}
   dialogueLines:
-  - "\u0E2A\u0E27\u0E31\u0E2A\u0E14\u0E35\u0E08\u0E49\u0E32"
-  autoProgressLines: 01
+  - "\u0E2A\u0E27\u0E31\u0E2A\u0E14\u0E35"
+  - "\u0E21\u0E35\u0E2D\u0E30\u0E44\u0E23\u0E43\u0E2B\u0E49\u0E0A\u0E48\u0E27\u0E22\u0E44\u0E2B\u0E21"
+  autoProgressLines: 0101
   autoProgessFDelay: 1
   dialogueDuration: 0.1
   voicsound: {fileID: 8300000, guid: a8bbb5844138c6745bfdfd79e32b9525, type: 3}

@@ -78,19 +78,19 @@ public class InventoryController : MonoBehaviour
         }
 
         //populate slots with save items
-        foreach(InventorySaveData data in InventorySaveData)
-        {
-            if (data.slotIndex < slotCount)
-            {
-                Slot slot = inventoryPanel.transform.GetChild(data.slotIndex).GetComponent<Slot>();
-                GameObject itemPrefab = itemDictionary.GetItemPrefab(data.itemID);
-                if (itemPrefabs != null)
-                {
-                    GameObject item = Instantiate(itemPrefab, slot.transform);
-                    item.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
-                    slot.currentItem = item;
-                }
-            }
-        }
+        //foreach(InventorySaveData data in InventorySaveData)
+        //{
+        //    if (data.slotIndex < slotCount)
+        //    {
+        //        Slot slot = inventoryPanel.transform.GetChild(data.slotIndex).GetComponent<Slot>();
+        //        GameObject itemPrefab = itemDictionary.GetItemPrefab(data.itemID);
+        //        if (itemPrefabs != null)
+        //        {
+        //            GameObject item = Instantiate(itemPrefab, slot.transform);
+        //            item.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+        //            slot.currentItem = item;
+        //        }
+        //    }
+        //}
     }
 }

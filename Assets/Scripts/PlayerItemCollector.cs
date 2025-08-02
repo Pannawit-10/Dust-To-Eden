@@ -8,6 +8,7 @@ public class PlayerItemCollector : MonoBehaviour
     {
         inventoryController = FindFirstObjectByType<InventoryController>();
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Item"))

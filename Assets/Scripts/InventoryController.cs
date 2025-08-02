@@ -31,7 +31,7 @@ public class InventoryController : MonoBehaviour
     public bool AddItem(GameObject itemPrefab)
     {
         //look for empty slot
-        foreach (Transform slotTranform in inventoryPanel.transform)
+        foreach(Transform slotTranform in inventoryPanel.transform)
         {
             Slot slot = slotTranform.GetComponent<Slot>();
             if (slot != null && slot.currentItem == null)
@@ -43,15 +43,15 @@ public class InventoryController : MonoBehaviour
             }
         }
 
-        Debug.Log("Inventory is full");
+        Debug.Log("Inventory is full!");
         return false;
     }
 
 
-    public List<InventorySaveData> GetInventoryItem()
+    public List<InventorySaveData> GetInventoryItems()
     {
         List<InventorySaveData> invData = new List<InventorySaveData>();
-        foreach (Transform slotTranform in inventoryPanel.transform)
+        foreach(Transform slotTranform in inventoryPanel.transform)
         {
             Slot slot = slotTranform.GetComponent<Slot>();
             if (slot.currentItem != null)
@@ -66,13 +66,13 @@ public class InventoryController : MonoBehaviour
     public void SetInventoryItems(List<InventorySaveData> InventorySaveData)
     {
         //clear inventory panel - avoid duplicates
-        foreach (Transform child in inventoryPanel.transform)
+        foreach(Transform child in inventoryPanel.transform)
         {
             Destroy(child.gameObject);
         }
 
         //create new slots
-        for (int i = 0; i < slotCount; i++)
+        for(int i = 0; i < slotCount; i++)
         {
             Instantiate(slotPrefab, inventoryPanel.transform);
         }

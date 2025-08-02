@@ -8,6 +8,10 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("cutscene01");
     }
+    public void Setting()
+    {
+        SceneManager.LoadScene("cutscene02");
+    }
     // Method to quit the game
     public void QuitGame()
     {

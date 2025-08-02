@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
     }
     public void Setting()
     {
-        SceneManager.LoadScene("cutscene02");
+        SceneManager.LoadScene("Mapone");
     }
     // Method to quit the game
     public void QuitGame()

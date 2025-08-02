@@ -32,7 +32,7 @@ public void SaveGame()
         {
             playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position,
             mapBoundary = FindFirstObjectByType<CinemachineConfiner2D>().BoundingShape2D.name,
-            inventorySaveData = inventoryController.GetInventoryItem(),
+            inventorySaveData = inventoryController.GetInventoryItems(),
             chestSaveData = GetChestsState()
         };
 
